@@ -1,5 +1,6 @@
 import model.Book;
 import model.Library;
+import model.LibraryException;
 
 import java.util.Scanner;
 
@@ -21,7 +22,14 @@ public class Main {
                     System.out.println("Dodaj Not implemented yet");
                     break;
                 case 3:
-                    System.out.println("Usun Not implemented yet");
+                    System.out.println("Podaj którą książkę chcesz usunać:");
+                    long id = SCANNER.nextLong();
+                    try {
+                        library.deleteBookById(id);
+                        System.out.println("Udało się usunąć");
+                    } catch (LibraryException libraryException) {
+                        System.out.println(libraryException.getMessage());
+                    }
                     break;
                 default:
                     System.out.println("Operacja o wybranym numerze nie istnieje");
