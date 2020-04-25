@@ -6,4 +6,10 @@ public class Library {
     public Library(Book[] books) {
         this.books = books;
     }
+
+    public void printAllBooks(){
+        for(Book book : books){
+            System.out.println(book);
+        }
+    }
 }
